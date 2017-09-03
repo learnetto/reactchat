@@ -17,3 +17,30 @@ h1 a {
     color: black;
   }
 }
+
+
+input[name='body'] {
+  width:90%;
+}
+
+input[type='submit'] {
+  background: black;
+  color: white;
+  outline: none;
+  border: 0;
+  border:none;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#messages {
+  border: solid 1px #EAEAEA;
+  padding: 20px;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.messageForm {
+  margin-bottom: 20px;
+}
