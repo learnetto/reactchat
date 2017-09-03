@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Message = ({message}) => 
-  <p>
+  <p className={message.className}>
     {message.user.name}: {message.body}
   </p>
 
