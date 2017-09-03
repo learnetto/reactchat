@@ -1,0 +1,3 @@
+$('#messages').append('<%=j render @message %>');
+$('#new_message').replaceWith('<%=j render partial: "messages/new", locals: {chatroom: @chatroom} %>');
+$('#message_body').focus();

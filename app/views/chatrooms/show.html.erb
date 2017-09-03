@@ -1,2 +1,9 @@
-<h1>Chatrooms#show</h1>
-<p>Find me in app/views/chatrooms/show.html.erb</p>
+<h2><%= @chatroom.name %></h2>
+
+<div id="messages">
+  <% @chatroom.messages.each do |message| %>
+    <%= render partial: 'messages/message', locals: {message: message} %>
+  <% end %>
+</div>
+
+<%= render partial: 'messages/new', locals: {chatroom: @chatroom} %>
