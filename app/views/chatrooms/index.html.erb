@@ -3,4 +3,6 @@
   <% @chatrooms.each do |chatroom| %>
     <p><%= link_to chatroom.name, chatroom, data: { turbolinks: false } %></p>
   <% end %>
+<% else %>
+  <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
 <% end %>
