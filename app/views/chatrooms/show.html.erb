@@ -1,9 +1,9 @@
 <h2><%= @chatroom.name %></h2>
 
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>" >
-  <% @chatroom.messages.each do |message| %>
-    <%= render partial: 'messages/message', locals: {message: message} %>
-  <% end %>
-</div>
+<%= react_component "Chatroom",
+      props: {chatroom: render(
+                partial: "chatrooms/chatroom.json",
+                locals: { chatroom: @chatroom })} %>
+
 
 <%= render partial: 'messages/new', locals: {chatroom: @chatroom} %>

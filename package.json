@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "postinstall": "cd client && yarn install"
+  },
+
   "name": "reactchat",
   "private": true,
   "dependencies": {}
