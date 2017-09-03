@@ -6,6 +6,7 @@ const MessagesList = ({messages}) =>
     {messages.map((message, i) => {
       return(<Message key={i} message={message} />)
     })}
+    <span id="messagesBottom"></span>
   </div>
 
 export default MessagesList
