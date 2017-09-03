@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reactchat</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application',  'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <div class="adbar">
+      <%= link_to "Learn how to build this chat app with React.js and Ruby on Rails", "https://learnetto.com/users/hrishio/courses/the-complete-react-on-rails-5-course" %>
+    </div>
+    <% if user_signed_in? %>
+      <p style="text-align: right">
+        <%= current_user.name %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      </p>
+    <% end %>
+
+    <h1><%= link_to "React Rooms", root_path %></h1>
+
+    <%= yield %>
+
+    <div class="adbar">
+      <%= link_to "A project by Learnetto", "https://learnetto.com" %>
+    </div>
+
+  </body>
+</html>
