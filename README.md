@@ -21,3 +21,15 @@ bundle && yarn
 
 foreman start -f Procfile.dev
 ```
+
+## Github Authentication
+
+We use Github for authentication. So you will need to register a new OAuth application on Github.
+
+Please make sure you set the authorization callback URL correctly. With the default devise and omniauth settings, add `/users/auth/github/callback` to your root URL.
+
+For example, here are the settings for an app running on localhost port 3000:
+
+Once you've set up your Github app, Github will provide you with a Client ID and secret. You need to add these to your app's environment as `GITHUB_APP_ID` and `GITHUB_APP_SECRET`.
+
+For development, the easiest way is to put them in your `~/.bash_profile`, start a new terminal window and restart your Rails server.
