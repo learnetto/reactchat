@@ -8,4 +8,4 @@ one:
 two:
   body: MyText
   chatroom: two
-  user: two
+  user: one
