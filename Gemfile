@@ -13,7 +13,7 @@ gem 'omniauth-github'
 
 gem 'jquery-rails'
 
-gem 'react_on_rails', '~> 8.0.6'
+gem 'react_on_rails', '~> 9.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -63,4 +63,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mini_racer', platforms: :ruby
-gem 'webpacker_lite'
+gem 'webpacker'
