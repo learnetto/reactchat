@@ -23,3 +23,8 @@ node_modules
 
 # Generated js bundles
 /public/webpack/*
+/public/packs/*
+/public/packs-test/*
+reactchat.sublime-workspace
+.DS_Store
+/public/assets/*

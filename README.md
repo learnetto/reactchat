@@ -37,3 +37,10 @@ Authorization callback URL: `http://localhost:3000/users/auth/github/callback`
 Once you've set up your Github app, Github will provide you with a Client ID and secret. You need to add these to your app's environment as `GITHUB_APP_ID` and `GITHUB_APP_SECRET`.
 
 For development, the easiest way is to put them in your `~/.bash_profile`, start a new terminal window and restart your Rails server.
+
+## Running test
+
+```bash
+cd client && bundle exec rake react_on_rails:locale && yarn run build:test
+bundle exec rake
+```

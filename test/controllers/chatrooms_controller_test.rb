@@ -1,14 +1,19 @@
 require 'test_helper'
 
 class ChatroomsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get chatrooms_index_url
+  include Devise::Test::IntegrationHelpers
+
+  test 'should get index' do
+    sign_in users(:one)
+
+    get chatrooms_url
     assert_response :success
   end
 
-  test "should get show" do
-    get chatrooms_show_url
+  test 'should get show' do
+    sign_in users(:one)
+
+    get chatroom_url(chatrooms(:one))
     assert_response :success
   end
-
 end

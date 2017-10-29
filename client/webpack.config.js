@@ -9,8 +9,10 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const webpackConfigLoader = require('react-on-rails/webpackConfigLoader');
 
 const configPath = resolve('..', 'config');
-const { devBuild, manifest, webpackOutputPath, webpackPublicOutputDir } =
-  webpackConfigLoader(configPath);
+const { output, settings } = webpackConfigLoader(configPath);
+const devBuild = process.env.NODE_ENV === 'development';
+const isHMR = devBuild ? settings.dev_server.hmr : false;
+
 
 const config = {
 
@@ -26,12 +28,11 @@ const config = {
   },
 
   output: {
-    // Name comes from the entry section.
-    filename: '[name]-[hash].js',
+    filename: isHMR ? '[name]-[hash].js' : '[name]-[chunkhash].js',
+    chunkFilename: '[name]-[chunkhash].chunk.js',
 
-    // Leading slash is necessary
-    publicPath: `/${webpackPublicOutputDir}`,
-    path: webpackOutputPath,
+    publicPath: output.publicPath,
+    path: output.path,
   },
 
   resolve: {
@@ -43,7 +44,10 @@ const config = {
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
       DEBUG: false,
     }),
-    new ManifestPlugin({ fileName: manifest, writeToFileEmit: true }),
+    new ManifestPlugin({
+      publicPath: output.publicPath,
+      writeToFileEmit: true
+    })
   ],
 
   module: {
