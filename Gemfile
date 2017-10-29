@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '~> 2.4.1'
+ruby '~> 2.4.2'
 
 gem 'devise'
 gem 'omniauth'
@@ -13,7 +13,7 @@ gem 'omniauth-github'
 
 gem 'jquery-rails'
 
-gem 'react_on_rails', '~> 9.0.3'
+gem 'react_on_rails', '~> 10.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
